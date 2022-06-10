@@ -1,4 +1,4 @@
-@extends('shopping.template')
+@extends('template.template')
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/cart4.css')}}">
@@ -110,7 +110,7 @@
                 </div>
                 <hr class="w-100">
                 <div class="changePage d-flex align-items-center justify-content-end my-5">
-                    <a class="btn btn-primary border border-primary text-white px-5 py-2" href="/bootstrap"
+                    <a class="btn btn-primary border border-primary text-white px-5 py-2" href="/"
                         role="button">返回首頁</a>
                 </div>
             </div>

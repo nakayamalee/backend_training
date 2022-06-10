@@ -18,12 +18,12 @@ use App\Http\Controllers\ShoppingCartController;
 */
 
 Route::get('/', [Controller::class,'index']);
-
-Route::get('/bootstrap', [ShoppingCartController::class,'index']);
 Route::get('/shopping1', [ShoppingCartController::class,'step1']);
 Route::get('/shopping2', [ShoppingCartController::class,'step2']);
 Route::get('/shopping3', [ShoppingCartController::class,'step3']);
 Route::get('/shopping4', [ShoppingCartController::class,'step4']);
+Route::get('/comment', [ShoppingCartController::class,'comment']);
+Route::get('/comment/save', [ShoppingCartController::class,'save_comment']);
 
 
 Route::get('/login', [Controller::class,'login']);

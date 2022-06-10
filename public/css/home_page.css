@@ -209,6 +209,20 @@ footer .list-group-item {
     background-color: #6366f1;
 }
 
+.no-img {
+    width: 80px;
+    height: 80px;
+    border: 1px transparent solid;
+    background-color: wheat;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    user-select: none;
+}
+
 #map {
     height: 60vh;
     position: relative;

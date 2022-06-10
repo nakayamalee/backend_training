@@ -1,5 +1,4 @@
-@extends('shopping.template')
-
+@extends('template.template')
 @section('css')
     <link rel="stylesheet" href="{{asset('css/cart3.css')}}">
 @endsection

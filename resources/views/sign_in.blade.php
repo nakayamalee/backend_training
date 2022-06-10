@@ -43,7 +43,7 @@
               <i class="fa-brands fa-linkedin-in fa-2x"></i>
             </div>
             <div class="mb-4">or use email your account</div>
-            <form action="/bootstrap" class="d-flex flex-column">
+            <form action="/" class="d-flex flex-column">
               <input type="email" class="form-control border-0 mb-4" placeholder="Email" aria-label="Username"
                 aria-describedby="basic-addon1">
               <input type="password" class="form-control border-0 mb-2" placeholder="Password" aria-label="Username"

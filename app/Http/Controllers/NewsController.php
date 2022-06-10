@@ -8,6 +8,6 @@ class NewsController extends Controller
 {
     //
     public function index(){
-        return view('shopping.sign_in');
+        return view('sign_in');
     }
 }

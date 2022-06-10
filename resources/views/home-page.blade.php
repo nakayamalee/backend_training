@@ -1,4 +1,4 @@
-@extends('shopping.template')
+@extends('template.template')
 
 @section('css')
     <link rel="stylesheet" href="./css/home_page.css">
@@ -53,12 +53,12 @@
             </div>
             <!-- 3 Cards -->
             <div class="d-flex flex-wrap py-5 cards">
-                @foreach ($data2 as $news)
+                @foreach ($newses as $news)
                     <div class="card col-12 col-md-4 border-0" style="width: 18rem;">
                         <div class="card-body">
                             <h5 class="d-flex justify-content-center">
                                 @if ($news->img == null || $news->img == '')
-                                    <div style="width: 80px; height: 80px;border: 1px transparent solid;background-color: wheat; border-radius: 50%;display:flex;justify-content:center;align-items:center;font-size: 35px; font-weight: bold;user-select:none;">
+                                    <div class="no-img">
                                         {{mb_substr($news->title,0,1,'utf-8')}}
                                     </div>
                                 @else

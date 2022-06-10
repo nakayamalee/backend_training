@@ -1,0 +1,87 @@
+.comment:not(:last-child){
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.comment:last-child{
+    margin-top: 10px;
+}
+.user-info{
+    display: flex;
+    font-weight: bold;
+    font-family: '微軟正黑體';
+    margin-bottom: 15px;
+}
+.title{
+    font-size: 36px;
+    margin-right: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+.write .title{
+    margin-right: auto;
+}
+.user{
+    font-size: 18px;
+    margin-right: auto;
+    display: flex;
+    align-items: flex-end;
+}
+.comment.write .user{
+    font-size: 36px;
+}
+.write .user{
+    margin-right: 0px;
+}
+.time-stamp{
+    font-size: 18px;
+    display: flex;
+    align-items: flex-end;
+}
+.content{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    min-height: 50px;
+    padding: 15px;
+}
+.comment input{
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background-color: transparent;
+}
+.title-input{
+    width: 295px;
+}
+.user-input{
+    width: 185px;
+}
+textarea{
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    outline: none;
+    resize: none;
+}
+.comment.write .action{
+    display: flex;
+    justify-content: flex-end;
+}
+.comment.write button[type="reset"]{
+    margin-right: 20px;
+}
+@media (max-width:1185px) {
+    .comment.write .user-info{
+        flex-direction: column;
+    }
+    .comment.write .user-info .title{
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+    .title-input{
+        width: 100%;
+    }
+    .user-input{
+        width: 100%;
+    }
+}

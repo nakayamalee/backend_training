@@ -1,4 +1,4 @@
-@extends('shopping.template')
+@extends('template.template')
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/cart1.css')}}">
@@ -118,7 +118,7 @@
                 </div>
                 <hr class="w-100">
                 <div class="changePage d-flex align-items-center justify-content-between my-5">
-                    <a href="/bootstrap" class="backToPage">
+                    <a href="/" class="backToPage">
                         <i class="fa-solid fa-arrow-left"></i>返回購物
                     </a>
                     <input class="btn btn-primary px-5 py-2" type="submit" value="下一步">
