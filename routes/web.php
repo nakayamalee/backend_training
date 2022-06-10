@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ShoppingCartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class,'index']);
+
+Route::get('/bootstrap', [ShoppingCartController::class,'index']);
+Route::get('/shopping1', [ShoppingCartController::class,'step1']);
+Route::get('/shopping2', [ShoppingCartController::class,'step2']);
+Route::get('/shopping3', [ShoppingCartController::class,'step3']);
+Route::get('/shopping4', [ShoppingCartController::class,'step4']);
+
+
+Route::get('/login', [Controller::class,'login']);

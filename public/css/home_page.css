@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    min-height: 92px;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.nav-link i {
+    font-size: large;
+}
+
+.navbar-nav .nav-item .text-center {
+    margin-right: 1.5rem;
+}
+
+.dropdown-toggle::after {
+    content: unset;
+}
+
+/* main {
+    background-color: rgb(209, 213, 219);
+  } */
+
+/* main中的白底容器 */
+main .carousel-inner {
+    height: calc(100vh - 92px);
+}
+
+main .topContent {
+    max-width: 35%;
+}
+
+main .topContent::after {
+    position: absolute;
+    content: '';
+    width: 6%;
+    height: 3px;
+    background-color: #6366f1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+svg {
+    stroke: #6366f1;
+    height: 80px;
+    padding: 20px;
+    background-color: #e0e7ff;
+    border-radius: 50%;
+}
+
+.cards svg {
+    height: 80px;
+    padding: 20px;
+}
+
+.colCards svg {
+    height: 120px;
+    padding: 20px;
+}
+
+.cards {
+    margin-left: -35px;
+    margin-right: -35px;
+}
+
+.introduceImg {
+    height: 200px;
+}
+
+.star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    width: 1rem;
+    height: 1rem;
+}
+
+.noStar {
+    position: relative;
+}
+
+.noStar::after {
+    content: '';
+    position: absolute;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    width: 0.5rem;
+    height: 0.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+}
+
+
+
+.text-custom {
+    color: #6366f1;
+}
+
+.bg-custom {
+    background-color: #6366f1;
+}
+
+.gridPart {
+    display: grid;
+    grid-template-rows: 10vw 10vw 10vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1vw;
+}
+
+.part1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background-color: #cccccc;
+    font-size: 3vw;
+}
+
+.part2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: #cccccc;
+    font-size: 3vw;
+}
+
+.part3 {
+    grid-column: 3/5;
+    grid-row: 1/3;
+    background-color: #cccccc;
+    font-size: 6vw;
+}
+
+.part4 {
+    grid-column: 1/3;
+    grid-row: 2/4;
+    background-color: #cccccc;
+    font-size: 6vw;
+}
+
+.part5 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background-color: #cccccc;
+    font-size: 3vw;
+}
+
+.part6 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+    background-color: #cccccc;
+    font-size: 3vw;
+}
+
+.pricing {
+    max-width: 1400px;
+    padding: 0 3rem;
+    margin: auto;
+}
+
+table * {
+    padding: 0.5vw !important;
+}
+
+label {
+    padding: 0 !important;
+    margin: 0;
+}
+
+
+
+.companyTitle {
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+.companyTitle img {
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.companyContent {
+    width: 60%;
+    text-align: center;
+}
+
+footer .list-group-item {
+    text-align: center;
+}
+
+.grayFooter {
+    background-color: #f3f4f6;
+}
+
+.fourCardsTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 4.5rem;
+    height: 3px;
+    background-color: #6366f1;
+}
+
+#map {
+    height: 60vh;
+    position: relative;
+}
+
+
+
+.plate {
+    width: 500px;
+    /* height: 450px; */
+    background-color: white;
+    border-radius: 10px;
+    top: 50%;
+    right: 1vw;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 500;
+    row-gap: 12px;
+}
+
+
+@media screen and (max-width:991px) {
+    .navbar-nav:last-child {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-item .text-center {
+        margin-right: 0rem;
+    }
+
+    .companyContent {
+        text-align: left;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    .companyContent {
+        text-align: center;
+    }
+
+    .plate {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 90%;
+    }
+}

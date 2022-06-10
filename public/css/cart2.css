@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    min-height: 92px;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.nav-link i {
+    font-size: large;
+}
+
+.navbar-nav .nav-item .text-center {
+    margin-right: 1.5rem;
+}
+
+.dropdown-toggle::after {
+    content: unset;
+}
+
+main {
+    background-color: rgb(209, 213, 219);
+}
+
+/* main中的白底容器 */
+main .plate {
+    background-color: #f3f4f6;
+    border-radius: 10px;
+}
+
+.stepContent {
+    background-color: #f3f4f6;
+}
+
+.greenProgress {
+    background-color: rgb(16, 185, 129);
+    color: white;
+    position: relative;
+}
+
+.lineProgress {
+    border-radius: 10px;
+    width: calc((100% - 17rem) / 4);
+    height: 10px;
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e5e7eb;
+    border: unset;
+}
+
+.leftLine {
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.leftLine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #6ee7b7;
+}
+
+.rightLine {
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.midLine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #6ee7b7;
+}
+
+main label {
+    font-size: 1.75rem;
+}
+
+.listSum .font-weight-bold {
+    font-size: larger;
+}
+
+.companyTitle {
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+
+.companyTitle img {
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.companyContent {
+    width: 60%;
+    text-align: center;
+}
+
+footer .list-group-item {
+    text-align: center;
+}
+
+footer .list-group {
+    margin-top: 1.5rem;
+    ;
+}
+
+.grayFooter {
+    background-color: #f3f4f6;
+}
+
+@media screen and (max-width:991px) {
+    .navbar-nav:last-child {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-item .text-center {
+        margin-right: 0rem;
+    }
+
+    .companyContent {
+        text-align: left;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    .companyContent {
+        text-align: center;
+    }
+}
