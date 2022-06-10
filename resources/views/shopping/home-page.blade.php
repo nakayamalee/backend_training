@@ -53,57 +53,27 @@
             </div>
             <!-- 3 Cards -->
             <div class="d-flex flex-wrap py-5 cards">
-                <div class="card col-12 col-md-4 border-0" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="d-flex justify-content-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                            </svg>
-                        </h5>
-                        <h6 class="card-title mb-2 text-muted text-center">Shooting Stars</h6>
-                        <p class="card-text text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                            taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-                        <a href="#" class="card-link">
-                            <p class="text-center">Learn More <i class="fa-solid fa-arrow-right"></i></p>
-                        </a>
+                @foreach ($data2 as $news)
+                    <div class="card col-12 col-md-4 border-0" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="d-flex justify-content-center">
+                                @if ($news->img == null || $news->img == '')
+                                    <div style="width: 80px; height: 80px;border: 1px transparent solid;background-color: wheat; border-radius: 50%;display:flex;justify-content:center;align-items:center;font-size: 35px; font-weight: bold;user-select:none;">
+                                        {{mb_substr($news->title,0,1,'utf-8')}}
+                                    </div>
+                                @else
+                                    <img src="{{ $news->img }}"
+                                        style="width: 80px;height:80px; border-radius: 50%;" alt="">
+                                @endif
+                            </h5>
+                            <h6 class="card-title mb-2 text-muted text-center">{{ $news->title }}</h6>
+                            <p class="card-text text-center">{{ $news->content }}</p>
+                            <a href="#" class="card-link">
+                                <p class="text-center">Learn More <i class="fa-solid fa-arrow-right"></i></p>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card col-12 col-md-4 border-0" style="width: 18rem;">
-                    <div class="card-body ">
-                        <h5 class=" d-flex justify-content-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-                                <circle cx="6" cy="6" r="3"></circle>
-                                <circle cx="6" cy="18" r="3"></circle>
-                                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                            </svg>
-                        </h5>
-                        <h6 class="card-title mb-2 text-muted text-center">The Catalyzer</h6>
-                        <p class="card-text text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                            taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-                        <a href="#" class="card-link">
-                            <p class="text-center">Learn More <i class="fa-solid fa-arrow-right"></i></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="card col-12 col-md-4 border-0" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="d-flex justify-content-center">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </h5>
-                        <h6 class="card-title mb-2 text-muted text-center">Neptune</h6>
-                        <p class="card-text text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                            taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-                        <a href="#" class="card-link">
-                            <p class="text-center">Learn More <i class="fa-solid fa-arrow-right"></i></p>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
                 <button class="btn btn-primary bg-custom text-white px-4 py-2 mx-auto mt-5">Button</button>
             </div>
         </section>

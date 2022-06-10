@@ -9,16 +9,17 @@ class ShoppingCartController extends Controller
 {
     //
     public function index(){
-        //取前三筆
-        // $data = DB::table('news')->take(3)->get();
+        //取最舊三筆
+        // $data1 = DB::table('news')->take(3)->get();
 
-        //取後三筆
-        // $data = DB::table('news')->skip(2)->take(3)->get();
+        //取最新三筆
+        $data2 = DB::table('news')->orderBy('id','desc')->take(3)->get();
 
         //隨機取三筆
-        // $data = DB::table('news')->inRandomOrder()->take(3)->get();
-        dd($data);
-        return view('shopping.home-page');
+        // $data3 = DB::table('news')->inRandomOrder()->take(3)->get();
+        // dd($data2[0]);
+        return view('shopping.home-page',compact('data2'));
+
     }
     public function step1(){
         return view('shopping.cart1');
