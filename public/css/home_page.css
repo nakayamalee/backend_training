@@ -10,6 +10,15 @@ body {
 .navbar {
     min-height: 92px;
 }
+.carousel-item{
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img{
+    height: 100%;
+    object-fit: cover;
+}
 
 .navbar-brand img {
     height: 60px;

@@ -27,24 +27,21 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link text-center" href="#">Blog</a>
+            <a class="nav-link text-center" href="/">商品管理</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link text-center" href="#">Portfolio</a>
+            <a class="nav-link text-center" href="/banner">Banner管理</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link text-center" href="#">About</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link text-center" href="#">Contact</a>
+            <a class="nav-link text-center" href="/comment">留言板管理</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link mr-4" href="/shopping1"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="nav-link mr-lg-0 mr-md-4" href="/shopping1"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link mr-4" href="/login"><i class="fa-solid fa-user"></i></a>
+            <a class="nav-link" href="./login"><i class="fa-solid fa-user"></i></a>
           </li>
         </ul>
       </div>
@@ -117,6 +114,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
     crossorigin="anonymous"></script>
+  @yield('js')
 </body>
 
 </html>

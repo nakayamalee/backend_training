@@ -20,13 +20,13 @@
                 </ol>
                 <div class="carousel-inner bg-secondary">
                     <div class="carousel-item active">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                        <img src="{{asset('/img/pokemon/part1.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                        <img src="{{asset('/img/pokemon/part2.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                        <img src="{{asset('/img/pokemon/part3.jpg')}}" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"

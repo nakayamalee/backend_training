@@ -27,7 +27,7 @@ class Controller extends BaseController
         return view('home-page',compact('newses'));
     }
     public function login(){
-        return view('sign_in');
+        return view('sign-in');
     }
 
     public function comment(){
