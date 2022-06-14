@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class ShoppingCartController extends Controller
@@ -20,11 +19,11 @@ class ShoppingCartController extends Controller
     public function step4(){
         return view('shopping.cart4');
     }
+
     public function comment(){
-        return view('comment.comment');
+        $comments = DB::table('comments')->orderBy('id','desc')->get();
+        return view('comment.comment',compact('comments'));
     }
-    public function save_comment(Request $request){
-        dd($request->all());
-    }
+
 
 }

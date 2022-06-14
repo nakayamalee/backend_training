@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/all.css">
+  <link rel="stylesheet" href="{{asset('css/all.css')}}">
   @yield('css')
   <title>
     @yield('title')
@@ -19,7 +19,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="/"><img src="./img/logo1.svg" alt=""></a>
+      <a class="navbar-brand" href="/"><img src="{{asset('img/logo1.svg')}}" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -41,10 +41,10 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link mr-4" href="./shopping1"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="nav-link mr-4" href="/shopping1"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link mr-4" href="./login"><i class="fa-solid fa-user"></i></a>
+            <a class="nav-link mr-4" href="/login"><i class="fa-solid fa-user"></i></a>
           </li>
         </ul>
       </div>
@@ -58,7 +58,7 @@
     <div class="d-flex flex-column flex-md-row  justify-content-center my-5 my-md-5">
       <div class="d-flex flex-column justify-content-md-center align-items-center col-lg-2 ">
         <div class="companyTitle w-lg-100">
-          <img src="./img/logo.svg" alt="" class="bg-dark mr-1">
+          <img src="{{asset('img/logo.svg')}}" alt="" class="bg-dark mr-1">
           數位方塊
         </div>
         <div class="companyContent text-lg-left w-lg-100">
