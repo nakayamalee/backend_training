@@ -72,12 +72,19 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // 若不改圖片
         if($request->img_banner == null || $request->img_banner == ''){
+            //用舊的圖片
             $path = $request->origin_img;
         }else{
+            //更新舊的圖片路徑
             $target = str_replace("/storage","public",$request->origin_img);
+            //刪除舊圖片
             Storage::disk('local')->delete($target);
+
+            //儲存新圖片
             $path = Storage::disk('local')->put('public/banner', $request->img_banner);
+            //更新新圖路徑
             $path = '/'.str_replace("public","storage",$path);
         }
 
