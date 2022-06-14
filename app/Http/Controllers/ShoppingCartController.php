@@ -20,10 +20,4 @@ class ShoppingCartController extends Controller
         return view('shopping.cart4');
     }
 
-    public function comment(){
-        $comments = DB::table('comments')->orderBy('id','desc')->get();
-        return view('comment.comment',compact('comments'));
-    }
-
-
 }

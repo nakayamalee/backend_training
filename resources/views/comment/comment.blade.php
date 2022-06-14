@@ -23,8 +23,10 @@
                     <div class="user">Comment by:
                         {{$comment->name}}
                     </div>
-                    <div class="time-stamp">Comment time:
-                        {{$comment->created_at}}
+                    <div class="time-stamp">
+                        @if ($comment->created_at != '' || $comment->created_at != null)
+                        {{substr($comment->created_at,5,2).'月'.substr($comment->created_at,8,2).'日'}}
+                        @endif
                     </div>
                 </div>
                 <div class="content">

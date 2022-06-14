@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Comment;
 
 class Controller extends BaseController
 {
@@ -28,27 +29,44 @@ class Controller extends BaseController
     public function login(){
         return view('sign_in');
     }
+
+    public function comment(){
+        // $comments = DB::table('comments')->orderBy('id','desc')->get();
+
+        $comments = Comment::orderBy('id','desc')->get();
+        return view('comment.comment',compact('comments'));
+    }
+
     public function save_comment(Request $request){
-        DB::table('comments')->insert([
+        // DB::table('comments')->insert([
+        //     'title' => $request->title,
+        //     'name' => $request->user,
+        //     'context' => $request->content,
+        //     'email' => '',
+        // ]);
+        Comment::create([
             'title' => $request->title,
             'name' => $request->user,
             'context' => $request->content,
             'email' => '',
-        ]);
+        ]);;
         return redirect('/comment');
     }
+
     public function delete_comment($target){
-        $deleted = DB::table('comments')->where('id', $target)->delete();
+        $deleted = Comment::where('id', $target)->delete();
         return redirect('/comment');
     }
+
     public function edit_comment($id){
         // $comment = DB::table('comments')->where('id',$id)->first();
-        $comment = DB::table('comments')->find($id);
+        $comment = Comment::find($id);
         // dd($comment);
         return view('comment.edit',compact('comment'));
     }
+
     public function update_comment(Request $request,$id){
-        DB::table('comments')->where('id',$id)->update([
+        Comment::where('id',$id)->update([
             'title' => $request->title,
             'name' => $request->user,
             'context' => $request->content,
