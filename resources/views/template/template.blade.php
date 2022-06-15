@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link text-center" href="/">商品管理</a>
+            <a class="nav-link text-center" href="/product">商品管理</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link text-center" href="/banner">Banner管理</a>

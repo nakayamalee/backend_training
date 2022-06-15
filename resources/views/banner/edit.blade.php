@@ -24,10 +24,9 @@
                 <div class="write d-flex flex-column">
                     <div class="my-4 d-flex flex-column">
                         <div>當前圖片:</div>
-                        <img src="{{$banner->img_path}}" style="opacity:{{$banner->img_opacity}};" alt="">
+                        <img src="" alt="">
                         <label for="img_banner">BANNER圖片上傳:</label>
                         <input type="file" name="img_banner" id="img_banner" class="border">
-                        <input type="hidden" name = "origin_img" value="{{$banner->img_path}}">
                     </div>
 
                     <div class="my-4 d-flex flex-column">

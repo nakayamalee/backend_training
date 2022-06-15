@@ -21,7 +21,7 @@
                 <div class="carousel-inner bg-secondary">
                     @foreach ($banners as $banner)
                         <div class="carousel-item @if ($loop->first)active @endif">
-                            <img src="{{ $banner->img_path }}" class="d-block w-100" alt="...">
+                            <img src="{{ $banner->img_path }}" style="opacity: {{ $banner->img_opacity }};" class="d-block w-100" alt="...">
                         </div>
                     @endforeach
                     <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
@@ -349,7 +349,7 @@
             </div>
         </section>
         <!-- 8 cards -->
-        <section class="px-5">
+        <section class="px-5 my-5">
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
                     <div class="col mt-5">

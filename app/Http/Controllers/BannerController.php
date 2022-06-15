@@ -72,27 +72,30 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // 若不改圖片
-        if($request->img_banner == null || $request->img_banner == ''){
-            //用舊的圖片
-            $path = $request->origin_img;
-        }else{
-            //更新舊的圖片路徑
-            $target = str_replace("/storage","public",$request->origin_img);
-            //刪除舊圖片
-            Storage::disk('local')->delete($target);
+        $banner = Banner::find($id);
 
-            //儲存新圖片
+        //如果有收到圖片
+        if($request->hasfile('img_banner')){
+            //存檔案
             $path = Storage::disk('local')->put('public/banner', $request->img_banner);
-            //更新新圖路徑
             $path = '/'.str_replace("public","storage",$path);
+
+            $target = str_replace("/storage","public",$banner->img_path);
+            torage::disk('local')->delete($target);
+
+            $banner->img_path = $path;
         }
 
-        Banner::find($id)->update([
-            'img_path' => $path,
-            'img_opacity' => $request->img_opacity,
-            'weight' => $request->img_weight,
-        ]);
+
+        $banner->img_opacity = $request->img_opacity;
+        $banner->weight = $request->img_weight;
+        $banner->save();
+        // Banner::find($id)->update([
+        //     'img_path' => $path,
+        //     'img_opacity' => $request->img_opacity,
+        //     'weight' => $request->img_weight,
+        // ]);
+
         return redirect('/banner');
     }
 

@@ -63,9 +63,5 @@
         $(document).ready(function () {
             $('#banner-list').DataTable();
         });
-
-        function delete_btn(id){
-            document.querySelector(`#delete_form${id}`).submit();
-        }
     </script>
 @endsection

@@ -19,7 +19,7 @@
                 <div class="write d-flex flex-column">
                     <div class="my-4 d-flex flex-column">
                         <label for="img_banner">BANNER圖片上傳:</label>
-                        <input type="file" name="img_banner" id="img_banner" class="border">
+                        <input type="file" name="img_banner" id="img_banner" class="border" required>
                     </div>
 
                     <div class="my-4 d-flex flex-column">
