@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="action">
-                        <button class="btn btn-danger" type="reset">取消</button>
+                        <button class="btn btn-danger" type="reset" onclick="location.href ='/banner'">取消</button>
                         <button class="btn btn-primary" type="submit">修改banner</button>
                     </div>
                 </div>

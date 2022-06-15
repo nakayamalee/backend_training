@@ -39,7 +39,10 @@
                             <td>{{$banner->weight}}</td>
                             <td>
                                 <button class="btn btn-success" onclick="location.href ='/banner/edit/{{$banner->id}}'">編輯</button>
-                                <button class="btn btn-danger" onclick="location.href ='/banner/delete/{{$banner->id}}'">刪除</button>
+                                <button class="btn btn-danger" type="submit" onclick="document.querySelector('#delete_form{{$banner->id}}').submit();">刪除</button>
+                                <form action="/banner/delete/{{$banner->id}}" method="POST" class="d-none" id="delete_form{{$banner->id}}">
+                                    @csrf
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -60,5 +63,9 @@
         $(document).ready(function () {
             $('#banner-list').DataTable();
         });
+
+        function delete_btn(id){
+            document.querySelector(`#delete_form${id}`).submit();
+        }
     </script>
 @endsection

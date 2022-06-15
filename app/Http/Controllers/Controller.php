@@ -9,6 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\Banner;
+
 
 class Controller extends BaseController
 {
@@ -20,12 +22,15 @@ class Controller extends BaseController
 
         //取最新三筆
         $newses = DB::table('news')->orderBy('id','desc')->take(3)->get();
-
         //隨機取三筆
         // $data3 = DB::table('news')->inRandomOrder()->take(3)->get();
         // dd($data2[0]);
-        return view('home-page',compact('newses'));
+
+        $banners = Banner::orderBy('weight','desc')->get();
+
+        return view('home-page',compact('newses','banners'));
     }
+
     public function login(){
         return view('sign-in');
     }

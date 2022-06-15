@@ -14,32 +14,27 @@
         <section>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    @foreach ($banners as $banner)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{$loop->index}}" @if ($loop->first)class="active" @endif></li>
+                    @endforeach
                 </ol>
                 <div class="carousel-inner bg-secondary">
-                    <div class="carousel-item active">
-                        <img src="{{asset('/img/pokemon/part1.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{asset('/img/pokemon/part2.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{asset('/img/pokemon/part3.jpg')}}" class="d-block w-100" alt="...">
-                    </div>
+                    @foreach ($banners as $banner)
+                        <div class="carousel-item @if ($loop->first)active @endif">
+                            <img src="{{ $banner->img_path }}" class="d-block w-100" alt="...">
+                        </div>
+                    @endforeach
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
-                    data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
-                    data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </button>
-            </div>
         </section>
 
         <!-- first part -->
@@ -59,11 +54,11 @@
                             <h5 class="d-flex justify-content-center">
                                 @if ($news->img == null || $news->img == '')
                                     <div class="no-img">
-                                        {{mb_substr($news->title,0,1,'utf-8')}}
+                                        {{ mb_substr($news->title, 0, 1, 'utf-8') }}
                                     </div>
                                 @else
-                                    <img src="{{ $news->img }}"
-                                        style="width: 80px;height:80px; border-radius: 50%;" alt="">
+                                    <img src="{{ $news->img }}" style="width: 80px;height:80px; border-radius: 50%;"
+                                        alt="">
                                 @endif
                             </h5>
                             <h6 class="card-title mb-2 text-muted text-center">{{ $news->title }}</h6>
