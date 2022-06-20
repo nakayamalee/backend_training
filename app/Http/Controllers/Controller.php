@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Banner;
+use App\Models\News;
 
 
 class Controller extends BaseController
@@ -21,7 +22,7 @@ class Controller extends BaseController
         // $data1 = DB::table('news')->take(3)->get();
 
         //取最新三筆
-        $newses = DB::table('news')->orderBy('id','desc')->take(3)->get();
+        $newses = News::orderBy('id','desc')->take(3)->get();
         //隨機取三筆
         // $data3 = DB::table('news')->inRandomOrder()->take(3)->get();
         // dd($data2[0]);

@@ -27,6 +27,9 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
+            <a class="nav-link text-center" href="/news">新聞管理</a>
+          </li>
+          <li class="nav-item active">
             <a class="nav-link text-center" href="/product">商品管理</a>
           </li>
           <li class="nav-item active">

@@ -49,6 +49,16 @@ Route::get('/shopping4', [ShoppingCartController::class,'step4']);
 // Route::resource('banner', BannerController::class);
 
 
+//news相關路由
+Route::prefix('/news')->group(function () {
+    Route::get('/',[NewsController::class,'index']);    //列表頁
+    Route::get('/create',[NewsController::class,'create']);    //新增頁
+    Route::post('/store',[NewsController::class,'store']);    //儲存
+    Route::get('/edit/{id}',[NewsController::class,'edit']);    //編輯
+    Route::post('/update/{id}',[NewsController::class,'update']);    //更新
+    Route::post('/delete/{id}',[NewsController::class,'destroy']);    //刪除
+});
+
 //banner相關路由
 Route::prefix('/banner')->group(function () {
     Route::get('/',[BannerController::class,'index']);    //列表頁
