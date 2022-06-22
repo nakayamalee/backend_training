@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Banner;
 use App\Models\News;
+use App\Models\Product;
 
 
 class Controller extends BaseController
@@ -30,7 +31,9 @@ class Controller extends BaseController
 
         $banners = Banner::orderBy('weight','desc')->get();
 
-        return view('home-page',compact('newses','banners'));
+        $products = Product::orderBy('id','desc')->take(8)->get();
+
+        return view('home-page',compact('newses','banners','products'));
     }
 
     public function login(){
