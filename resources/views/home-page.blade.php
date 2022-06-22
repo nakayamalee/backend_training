@@ -47,7 +47,7 @@
                 </div>
             </div>
             <!-- 3 Cards -->
-            <div class="d-flex flex-wrap py-5 cards">
+            <div class="d-flex flex-wrap py-5 cards justify-content-center">
                 @foreach ($newses as $news)
                     <div class="card col-12 col-md-4 border-0" style="width: 18rem;">
                         <div class="card-body">
@@ -69,7 +69,9 @@
                         </div>
                     </div>
                 @endforeach
-                <button class="btn btn-primary bg-custom text-white px-4 py-2 mx-auto mt-5">Button</button>
+                <div class="d-flex w-100 px-4 py-2">
+                    <button class="btn btn-primary bg-custom text-white mx-auto">Button</button>
+                </div>
             </div>
         </section>
         <!-- grid -->

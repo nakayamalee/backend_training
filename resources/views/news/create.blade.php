@@ -22,8 +22,8 @@
                         <input type="text" name="news_title" id="news_title" class="border" required>
                     </div>
                     <div class="my-4 d-flex flex-column">
-                        <label for="news_contnet">新聞內容:</label>
-                        <input type="text" name="news_contnet" id="news_contnet" class="border" required>
+                        <label for="news_content">新聞內容:</label>
+                        <input type="text" name="news_content" id="news_content" class="border" required>
                     </div>
                     <div class="my-4 d-flex flex-column">
                         <label for="news_img">新聞圖片上傳:</label>

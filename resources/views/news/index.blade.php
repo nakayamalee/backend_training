@@ -37,7 +37,11 @@
                             <td>{{$data->title}}</td>
                             <td>{{$data->content}}</td>
                             <td class="news-img">
-                                <img src="{{$data->img}}" alt="" class="w-100">
+                                @if ($data->img != null || $data->img != '')
+                                    <img src="{{$data->img}}" alt="" class="w-100">
+                                @else
+                                    <p class="text-center m-0 font-weight-bold">尚未提供圖片</p>
+                                @endif
                             </td>
                             <td>
                                 <button class="btn btn-success" onclick="location.href ='/news/edit/{{$data->id}}'">編輯</button>

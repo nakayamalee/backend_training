@@ -43,16 +43,37 @@ class NewsController extends Controller
 
     public function edit($id)
     {
-        
+        $news = News::find($id);
+        return view('news.edit',compact('news'));
     }
 
     public function update(Request $request, $id)
     {
+        $news = News::find($id);
 
+        if($request->hasfile('news_img')){
+            //存檔案
+            $path = Storage::disk('local')->put('public/news', $request->news_img);
+            $path = '/'.str_replace("public","storage",$path);
+
+            $target = str_replace("/storage","public",$news->news_img);
+            Storage::disk('local')->delete($target);
+
+            $news->img = $path;
+        }
+
+        $news->title = $request->news_title;
+        $news->content = $request->news_content;
+        $news->save();
+        return redirect('/news');
     }
 
     public function destroy($id)
     {
-
+        $news = News::find($id);
+        $target = str_replace("/storage","public",$news->img);
+        Storage::disk('local')->delete($target);
+        $news->delete();
+        return redirect('/news');
     }
 }

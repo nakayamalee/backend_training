@@ -22,10 +22,11 @@ class Controller extends BaseController
         // $data1 = DB::table('news')->take(3)->get();
 
         //取最新三筆
-        $newses = News::orderBy('id','desc')->take(3)->get();
+        // $newses = News::orderBy('id','desc')->take(3)->get();
         //隨機取三筆
         // $data3 = DB::table('news')->inRandomOrder()->take(3)->get();
         // dd($data2[0]);
+        $newses = News::inRandomOrder()->take(3)->get();
 
         $banners = Banner::orderBy('weight','desc')->get();
 

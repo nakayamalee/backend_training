@@ -81,7 +81,7 @@ class BannerController extends Controller
             $path = '/'.str_replace("public","storage",$path);
 
             $target = str_replace("/storage","public",$banner->img_path);
-            torage::disk('local')->delete($target);
+            Storage::disk('local')->delete($target);
 
             $banner->img_path = $path;
         }
